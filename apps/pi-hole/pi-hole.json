@@ -7,8 +7,16 @@
   "website": "https://pi-hole.net",
   "dockerImage": "docker.io/pihole/pihole:latest",
   "dockerPorts": [
-    "53:53/tcp",
-    "53:53/udp"
+    {
+      "host": 53,
+      "container": 53,
+      "protocol": "tcp"
+    },
+    {
+      "host": 53,
+      "container": 53,
+      "protocol": "udp"
+    }
   ],
   "dockerNetworkMode": "bridge",
   "dockerVolumes": {},
