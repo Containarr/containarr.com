@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://containarr.com/apps/service.schema.json",
+  "title": "Containarr service",
+  "description": "A service definition published in the Containarr app registry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "category",
+    "version",
+    "name",
+    "port",
+    "description",
+    "website",
+    "dockerImage",
+    "dockerPorts",
+    "dockerNetworkMode",
+    "dockerVolumes",
+    "dockerEnvironment"
+  ],
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "AI",
+        "Automation",
+        "Communication",
+        "Dashboard",
+        "Database",
+        "Development",
+        "Downloads",
+        "Finance",
+        "Internet",
+        "Media",
+        "Monitoring",
+        "Productivity",
+        "Security",
+        "Smart Home",
+        "Storage",
+        "Utilities"
+      ]
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "website": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "dockerImage": {
+      "type": "string",
+      "pattern": "^[^\\s]+:[^\\s]+$"
+    },
+    "dockerPorts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "host",
+          "container",
+          "protocol"
+        ],
+        "properties": {
+          "host": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "container": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "protocol": {
+            "type": "string",
+            "enum": [
+              "tcp",
+              "udp"
+            ]
+          }
+        }
+      }
+    },
+    "dockerNetworkMode": {
+      "type": "string",
+      "enum": [
+        "bridge",
+        "host"
+      ]
+    },
+    "dockerVolumes": {
+      "type": "object",
+      "propertyNames": {
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "dockerEnvironment": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "dockerPrivileged": {
+      "type": "boolean"
+    },
+    "dockerCapabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(CAP_)?[A-Z][A-Z0-9_]*$"
+      }
+    }
+  }
+}
