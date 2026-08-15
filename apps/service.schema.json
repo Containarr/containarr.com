@@ -113,6 +113,16 @@
         "minLength": 1
       }
     },
+    "dockerDevices": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^/dev/"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^/dev/"
+      }
+    },
     "dockerEnvironment": {
       "type": "object",
       "propertyNames": {
