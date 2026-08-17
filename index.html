@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <meta
+    name="theme-color"
+    content="#09090b"
+  >
+  <meta
+    name="description"
+    content="Containarr is the easiest way to install, run, update, and securely access Docker containers on your homelab server."
+  >
+  <title>Containarr — Your homelab, all in one place</title>
+  <link
+    rel="icon"
+    href="assets/logo.png"
+  >
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+  <script
+    src="script.js"
+    defer
+  ></script>
+</head>
+
+<body>
+  <a
+    class="skip-link"
+    href="#main"
+  >Skip to content</a>
+
+  <header class="site-header">
+    <nav
+      class="nav shell"
+      aria-label="Main navigation"
+    >
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Containarr home"
+      >
+        <img
+          src="assets/logo.png"
+          width="38"
+          height="38"
+          alt=""
+        >
+        <span>Containarr</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/Containarr/containarr">GitHub</a>
+      </div>
+      <a
+        class="button button-small button-outline nav-cta"
+        href="#install"
+      >Get started <span aria-hidden="true">→</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section
+      class="hero"
+      id="top"
+    >
+      <div
+        class="hero-glow"
+        aria-hidden="true"
+      ></div>
+      <div class="shell hero-inner">
+        <a
+          class="eyebrow"
+          href="https://github.com/Containarr/containarr"
+        >
+          <span class="eyebrow-dot"></span>
+          Open source and built for your homelab
+          <span aria-hidden="true">→</span>
+        </a>
+        <h1>Your homelab.<br><span>Beautifully simple.</span></h1>
+        <p class="hero-copy">Install, update and securely access all your Docker containers from one place.</p>
+
+        <div
+          class="typing-stage"
+          aria-label="Examples of secure app addresses"
+        >
+          <span class="typing-url">
+            <span class="typing-fixed">https://</span><span
+              class="typing-service"
+              id="typing-service"
+            >p</span><span
+              class="typing-cursor"
+              aria-hidden="true"
+            ></span><span class="typing-fixed">.mydomain.com</span>
+          </span>
+          <span class="sr-only">Examples include https://plex.mydomain.com and https://sonarr.mydomain.com</span>
+        </div>
+
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="#install"
+          >Install Containarr <span aria-hidden="true">→</span></a>
+          <a
+            class="button button-outline"
+            href="https://github.com/Containarr/containarr"
+            target="_blank"
+            rel="noreferrer"
+          >View on GitHub</a>
+        </div>
+
+        <div
+          class="product-showcase"
+          aria-label="Containarr on desktop and mobile"
+        >
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <span
+                class="window-dots"
+                aria-hidden="true"
+              ><i></i><i></i><i></i></span>
+              <span class="browser-address">https://containarr.mydomain.com</span>
+              <span
+                class="browser-menu"
+                aria-hidden="true"
+              >•••</span>
+            </div>
+            <img
+              id="product-desktop-image"
+              src="assets/desktop-apps.png"
+              alt="Containarr desktop control center showing installed apps"
+            >
+          </div>
+
+          <div class="phone-frame">
+            <span
+              class="dynamic-island"
+              aria-hidden="true"
+            ></span>
+            <div class="phone-screen">
+              <img
+                id="product-mobile-image"
+                src="assets/mobile-apps.png"
+                alt="Containarr iPhone app showing installed apps"
+              >
+            </div>
+          </div>
+
+          <div
+            class="showcase-pager"
+            role="group"
+            aria-label="Choose a product screenshot"
+          >
+            <button
+              class="pager-dot active"
+              type="button"
+              aria-label="Show Apps screenshots"
+              aria-pressed="true"
+            ></button>
+            <button
+              class="pager-dot"
+              type="button"
+              aria-label="Show Containers screenshots"
+              aria-pressed="false"
+            ></button>
+            <button
+              class="pager-dot"
+              type="button"
+              aria-label="Show Proxies screenshots"
+              aria-pressed="false"
+            ></button>
+            <button
+              class="pager-dot"
+              type="button"
+              aria-label="Show Firewall screenshots"
+              aria-pressed="false"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section section-muted"
+      id="features"
+    >
+      <div class="shell">
+        <div class="section-heading">
+          <p class="kicker">Everything you need</p>
+          <h2>Less time maintaining.<br>More time self-hosting.</h2>
+          <p>Containarr takes care of the repetitive infrastructure so your apps just work.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card-wide">
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect
+                  width="7"
+                  height="7"
+                  x="3"
+                  y="3"
+                  rx="1"
+                ></rect>
+                <rect
+                  width="7"
+                  height="7"
+                  x="14"
+                  y="3"
+                  rx="1"
+                ></rect>
+                <rect
+                  width="7"
+                  height="7"
+                  x="14"
+                  y="14"
+                  rx="1"
+                ></rect>
+                <rect
+                  width="7"
+                  height="7"
+                  x="3"
+                  y="14"
+                  rx="1"
+                ></rect>
+              </svg>
+            </div>
+            <h3>A secure address for every app</h3>
+            <p>Reach Plex, Sonarr, and every other service on its own subdomain. HTTPS is configured automatically.
+              Install new apps from the extensive apps registry. All the hard parameters are automatically filled!</p>
+            <div
+              class="domain-stack"
+              aria-hidden="true"
+            >
+              <div><img
+                  src="assets/plex.png"
+                  alt=""
+                ><span>plex.mydomain.com</span><b>Live</b></div>
+              <div><img
+                  src="assets/sonarr.png"
+                  alt=""
+                ><span>sonarr.mydomain.com</span><b>Live</b></div>
+              <div><img
+                  src="assets/homey.png"
+                  alt=""
+                ><span>homey.mydomain.com</span><b>Live</b></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 7.7c0-.6-.4-1.2-.8-1.5l-6.3-3.9a1.72 1.72 0 0 0-1.7 0l-10.3 6c-.5.2-.9.8-.9 1.4v6.6c0 .5.4 1.2.8 1.5l6.3 3.9a1.72 1.72 0 0 0 1.7 0l10.3-6c.5-.3.9-1 .9-1.5Z"
+                ></path>
+                <path d="M10 21.9V14L2.1 9.1"></path>
+                <path d="m10 14 11.9-6.9"></path>
+                <path d="M14 19.8v-8.1"></path>
+                <path d="M18 17.5V9.4"></path>
+              </svg>
+            </div>
+            <h3>One control center</h3>
+            <p>Install, configure, run, and update containers from a polished interface designed for desktop and mobile.
+            </p>
+            <div
+              class="mini-status"
+              aria-hidden="true"
+            ><span><i></i> 7 apps running</span><strong>All systems normal</strong></div>
+          </article>
+
+          <article class="feature-card">
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"></path>
+                <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"></path>
+                <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"></path>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                ></circle>
+              </svg>
+            </div>
+            <h3>Built-in Dynamic DNS</h3>
+            <p>Point one wildcard CNAME at Containarr. Your domain keeps following your home IP automatically.</p>
+            <div
+              class="dns-record"
+              aria-hidden="true"
+            ><code>*.mydomain.com</code><span>CNAME</span><code>abcd1234.containarr.me</code><b>✓</b></div>
+          </article>
+
+          <article class="feature-card">
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                ></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3>Built-in Firewall</h3>
+            <p>Make services public, keep them on your LAN, or restrict access to specific IP addresses and networks.
+            </p>
+            <div
+              class="access-pills"
+              aria-hidden="true"
+            >
+              <span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"></path>
+                  <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"></path>
+                  <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"></path>
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  ></circle>
+                </svg>
+                Public
+              </span>
+              <span class="active">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  ></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                LAN only
+              </span>
+              <span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  ></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                Custom
+              </span>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                <path d="M21 3v5h-5"></path>
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                <path d="M8 16H3v5"></path>
+              </svg>
+            </div>
+            <h3>Updates without the busywork</h3>
+            <p>Automatically update containers, or choose to update manually when a new version is available.</p>
+            <div
+              class="update-row"
+              aria-hidden="true"
+            ><span><i></i> Up to date</span><b>v1.8.2</b></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section install-section"
+      id="install"
+    >
+      <div class="shell install-layout">
+        <div class="install-intro">
+          <p class="kicker">Three simple steps</p>
+          <h2>From zero to self-hosted in minutes.</h2>
+          <p>All you need is a Linux host—such as a Raspberry Pi—with ports 80 and 443 available.</p>
+          <a
+            class="text-link"
+            href="https://github.com/Containarr/containarr#requirements"
+          >Read the full documentation <span aria-hidden="true">→</span></a>
+        </div>
+
+        <ol class="steps">
+          <li class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Install Docker</h3>
+              <p>If Docker is not on your server yet, install it and add your user to the Docker group.</p>
+              <div class="code-block">
+                <button
+                  class="copy-button"
+                  type="button"
+                  aria-label="Copy Docker installation commands"
+                >Copy</button>
+                <pre><code>curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $(whoami)
+exit</code></pre>
+              </div>
+              <p class="step-note">Log in again after running these commands.</p>
+            </div>
+          </li>
+
+          <li class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Run Containarr</h3>
+              <p>Create its network and start the latest release.</p>
+              <div class="code-block">
+                <button
+                  class="copy-button"
+                  type="button"
+                  aria-label="Copy Containarr installation commands"
+                >Copy</button>
+                <pre><code>docker network create containarr
+docker run -d \
+  --name=containarr \
+  --network=containarr \
+  -v ~/.containarr/:/data/ \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -p 80:80 \
+  -p 443:443 \
+  --restart unless-stopped \
+  ghcr.io/containarr/containarr:latest</code></pre>
+              </div>
+              <p class="step-note">Your settings are saved in <code>~/.containarr</code>.</p>
+            </div>
+          </li>
+
+          <li class="step-card step-card-last">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Open your browser</h3>
+              <p>Visit <a href="http://localhost"><code>http://localhost</code></a> to finish setup and run your first
+                container.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell final-cta-inner">
+        <img
+          src="assets/logo.png"
+          width="84"
+          height="84"
+          alt=""
+        >
+        <p class="kicker">Your server. Your data. Your rules.</p>
+        <h2>Make your homelab feel like home.</h2>
+        <p>Open source, self-hosted, and ready when you are.</p>
+        <div class="hero-actions">
+          <a
+            class="button button-light"
+            href="#install"
+          >Get started <span aria-hidden="true">→</span></a>
+          <a
+            class="button button-ghost"
+            href="https://github.com/Containarr/containarr"
+          >Star on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a
+        class="brand"
+        href="#top"
+      ><img
+          src="assets/logo.png"
+          width="32"
+          height="32"
+          alt=""
+        ><span>Containarr</span></a>
+      <p>The easiest way to self-host Docker containers.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Containarr/containarr">GitHub</a>
+        <a href="https://github.com/sponsors/WeeJeWel">Sponsor</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
