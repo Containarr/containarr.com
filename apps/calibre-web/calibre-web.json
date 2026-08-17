@@ -8,10 +8,10 @@
   "dockerImage": "docker.io/linuxserver/calibre-web:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "calibre-web-config": "/config",
-    "books": "/books"
-  },
+  "dockerVolumes": [
+    "calibre-web-config:/config",
+    "$REQUIRED:/books"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

@@ -8,9 +8,9 @@
   "dockerImage": "ghcr.io/athombv/homey-shs:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "host",
-  "dockerVolumes": {
-    "$REQUIRED": "/homey/user"
-  },
+  "dockerVolumes": [
+    "$REQUIRED:/homey/user"
+  ],
   "dockerEnvironment": {},
   "dockerPrivileged": true
 }

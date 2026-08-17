@@ -8,10 +8,10 @@
   "dockerImage": "ghcr.io/kieraneglin/pinchflat:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "pinchflat-config": "/config",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "pinchflat-config:/config",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "TZ": "$TIMEZONE"
   }

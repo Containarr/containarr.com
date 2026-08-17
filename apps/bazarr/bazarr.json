@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/bazarr:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "bazarr-config": "/config",
-    "movies": "/movies",
-    "tv": "/tv"
-  },
+  "dockerVolumes": [
+    "bazarr-config:/config",
+    "$REQUIRED:/movies",
+    "$REQUIRED:/tv"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

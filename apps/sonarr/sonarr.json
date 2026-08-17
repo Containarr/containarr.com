@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/sonarr:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "sonarr-config": "/config",
-    "tv": "/tv",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "sonarr-config:/config",
+    "$REQUIRED:/tv",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

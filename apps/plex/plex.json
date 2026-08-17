@@ -8,7 +8,11 @@
   "dockerImage": "docker.io/plexinc/pms-docker:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {},
+  "dockerVolumes": [
+    "plex-config:/config",
+    "plex-transcode:/transcode",
+    "$REQUIRED:/data"
+  ],
   "dockerEnvironment": {
     "TZ": "$TIMEZONE"
   }

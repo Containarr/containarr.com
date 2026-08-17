@@ -8,10 +8,10 @@
   "dockerImage": "docker.io/jvmilazz0/kavita:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "kavita-config": "/kavita/config",
-    "books": "/books"
-  },
+  "dockerVolumes": [
+    "kavita-config:/kavita/config",
+    "$REQUIRED:/books"
+  ],
   "dockerEnvironment": {
     "TZ": "$TIMEZONE"
   }

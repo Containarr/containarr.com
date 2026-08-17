@@ -11,5 +11,8 @@
   "dockerVolumes": {
     "couchdb-data": "/opt/couchdb/data"
   },
-  "dockerEnvironment": {}
+  "dockerEnvironment": {
+    "COUCHDB_USER": "$REQUIRED",
+    "COUCHDB_PASSWORD": "$REQUIRED"
+  }
 }

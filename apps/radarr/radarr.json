@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/radarr:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "radarr-config": "/config",
-    "movies": "/movies",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "radarr-config:/config",
+    "$REQUIRED:/movies",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

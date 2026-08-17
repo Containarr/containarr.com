@@ -18,6 +18,6 @@
     "timescaledb-data": "/var/lib/postgresql/data"
   },
   "dockerEnvironment": {
-    "POSTGRES_PASSWORD": "change-me"
+    "POSTGRES_PASSWORD": "$REQUIRED"
   }
 }

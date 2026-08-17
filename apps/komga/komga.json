@@ -8,10 +8,10 @@
   "dockerImage": "docker.io/gotson/komga:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "komga-config": "/config",
-    "books": "/data"
-  },
+  "dockerVolumes": [
+    "komga-config:/config",
+    "$REQUIRED:/data"
+  ],
   "dockerEnvironment": {
     "TZ": "$TIMEZONE"
   }

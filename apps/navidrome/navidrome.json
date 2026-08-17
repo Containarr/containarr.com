@@ -8,10 +8,10 @@
   "dockerImage": "docker.io/deluan/navidrome:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "navidrome-data": "/data",
-    "music": "/music:ro"
-  },
+  "dockerVolumes": [
+    "navidrome-data:/data",
+    "$REQUIRED:/music:ro"
+  ],
   "dockerEnvironment": {
     "ND_SCANSCHEDULE": "1h",
     "ND_LOGLEVEL": "info",

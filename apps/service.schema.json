@@ -104,14 +104,26 @@
       ]
     },
     "dockerVolumes": {
-      "type": "object",
-      "propertyNames": {
-        "minLength": 1
-      },
-      "additionalProperties": {
-        "type": "string",
-        "minLength": 1
-      }
+      "description": "Volume sources mapped to container paths. Use $REQUIRED as a source when the user must choose a host path.",
+      "oneOf": [
+        {
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^.+:.+$"
+          }
+        }
+      ]
     },
     "dockerDevices": {
       "type": "object",
@@ -124,6 +136,7 @@
       }
     },
     "dockerEnvironment": {
+      "description": "Environment variables passed to the container. Use $REQUIRED as a value when the user must provide it.",
       "type": "object",
       "propertyNames": {
         "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"

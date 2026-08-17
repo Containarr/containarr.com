@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/lidarr:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "lidarr-config": "/config",
-    "music": "/music",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "lidarr-config:/config",
+    "$REQUIRED:/music",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

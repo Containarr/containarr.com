@@ -19,10 +19,10 @@
     }
   ],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "qbittorrent-config": "/config",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "qbittorrent-config:/config",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

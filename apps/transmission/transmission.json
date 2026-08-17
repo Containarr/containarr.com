@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/transmission:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "transmission-config": "/config",
-    "downloads": "/downloads",
-    "watch": "/watch"
-  },
+  "dockerVolumes": [
+    "transmission-config:/config",
+    "$REQUIRED:/downloads",
+    "$REQUIRED:/watch"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

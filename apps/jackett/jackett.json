@@ -8,10 +8,10 @@
   "dockerImage": "docker.io/linuxserver/jackett:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "jackett-config": "/config",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "jackett-config:/config",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

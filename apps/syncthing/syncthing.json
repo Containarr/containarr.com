@@ -8,10 +8,10 @@
   "dockerImage": "docker.io/syncthing/syncthing:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "syncthing-config": "/var/syncthing/config",
-    "files": "/var/syncthing/data"
-  },
+  "dockerVolumes": [
+    "syncthing-config:/var/syncthing/config",
+    "$REQUIRED:/var/syncthing/data"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000"

@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/sabnzbd:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "sabnzbd-config": "/config",
-    "downloads": "/downloads",
-    "incomplete-downloads": "/incomplete-downloads"
-  },
+  "dockerVolumes": [
+    "sabnzbd-config:/config",
+    "$REQUIRED:/downloads",
+    "$REQUIRED:/incomplete-downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

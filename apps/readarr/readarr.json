@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/linuxserver/readarr:develop",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "readarr-config": "/config",
-    "books": "/books",
-    "downloads": "/downloads"
-  },
+  "dockerVolumes": [
+    "readarr-config:/config",
+    "$REQUIRED:/books",
+    "$REQUIRED:/downloads"
+  ],
   "dockerEnvironment": {
     "PUID": "1000",
     "PGID": "1000",

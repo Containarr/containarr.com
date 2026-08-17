@@ -8,9 +8,9 @@
   "dockerImage": "docker.io/filebrowser/filebrowser:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "filebrowser-data": "/database",
-    "files": "/srv"
-  },
+  "dockerVolumes": [
+    "filebrowser-data:/database",
+    "$REQUIRED:/srv"
+  ],
   "dockerEnvironment": {}
 }

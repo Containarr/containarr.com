@@ -8,11 +8,11 @@
   "dockerImage": "docker.io/jellyfin/jellyfin:latest",
   "dockerPorts": [],
   "dockerNetworkMode": "bridge",
-  "dockerVolumes": {
-    "jellyfin-config": "/config",
-    "jellyfin-cache": "/cache",
-    "media": "/media"
-  },
+  "dockerVolumes": [
+    "jellyfin-config:/config",
+    "jellyfin-cache:/cache",
+    "$REQUIRED:/media"
+  ],
   "dockerEnvironment": {
     "TZ": "$TIMEZONE"
   }
