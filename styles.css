@@ -74,8 +74,8 @@ h1 span { color: #8b8b95; }
 .button-outline { border-color: var(--border); background: rgba(255,255,255,.035); color: #e8e8eb; box-shadow: 0 1px rgba(255,255,255,.04) inset; }
 .button-outline:hover { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.07); }
 
-.product-showcase { position: relative; width: min(1080px, 100%); margin: 94px auto 0; text-align: left; perspective: 1400px; }
-.browser-frame { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: #111; box-shadow: 0 50px 120px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.03) inset, 0 0 120px rgba(59,130,246,.08); transform: rotateX(1deg); }
+.product-showcase { position: relative; width: min(900px, 100%); margin: 94px auto 0; text-align: left; }
+.browser-frame { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: #111; box-shadow: 0 50px 120px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.03) inset, 0 0 120px rgba(59,130,246,.08); }
 .browser-bar { height: 45px; display: grid; grid-template-columns: 1fr minmax(200px, 360px) 1fr; align-items: center; padding: 0 14px; border-bottom: 1px solid #29292d; background: linear-gradient(#222226, #18181b); color: #777780; font-size: 11px; }
 .window-dots { display: flex; gap: 6px; }
 .window-dots i { display: block; width: 9px; height: 9px; border-radius: 50%; background: #46464d; }
@@ -84,7 +84,7 @@ h1 span { color: #8b8b95; }
 .window-dots i:last-child { background: #28c840; }
 .browser-address { display: flex; justify-content: center; align-items: center; gap: 7px; height: 27px; border: 1px solid #303035; border-radius: 7px; background: #101012; }
 .browser-menu { justify-self: end; letter-spacing: 2px; }
-.browser-frame > img { width: 100%; aspect-ratio: 1.334 / 1; object-fit: cover; transition: opacity .25s ease; }
+.browser-frame > img { width: 100%; height: auto; transition: opacity .25s ease; }
 
 .phone-frame { position: absolute; right: -22px; bottom: 16px; width: 238px; padding: 8px; border: 1px solid rgba(255,255,255,.22); border-radius: 38px; background: #0b0b0d; box-shadow: 0 35px 80px rgba(0,0,0,.8), 0 0 0 2px #25252a inset; }
 .phone-screen { overflow: hidden; aspect-ratio: 9 / 19.5; border-radius: 31px; background: #111; }
