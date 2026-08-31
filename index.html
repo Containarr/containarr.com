@@ -480,21 +480,18 @@ exit</code></pre>
             <div class="step-number">2</div>
             <div class="step-content">
               <h3>Run Containarr</h3>
-              <p>Create its network and start the latest release.</p>
+              <p>Start the latest release on your host network.</p>
               <div class="code-block">
                 <button
                   class="copy-button"
                   type="button"
                   aria-label="Copy Containarr installation commands"
                 >Copy</button>
-                <pre><code>docker network create containarr
-docker run -d \
+                <pre><code>docker run -d \
   --name=containarr \
-  --network=containarr \
+  --network=host \
   -v ~/.containarr/:/data/ \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -p 80:80 \
-  -p 443:443 \
   --restart unless-stopped \
   ghcr.io/containarr/containarr:latest</code></pre>
               </div>
