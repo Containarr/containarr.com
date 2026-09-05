@@ -55,6 +55,7 @@ if (reduceMotion) {
 
 const productDesktopImage = document.querySelector('#product-desktop-image');
 const productMobileImage = document.querySelector('#product-mobile-image');
+const productPhoneFrame = document.querySelector('.phone-frame');
 const pagerDots = document.querySelectorAll('.pager-dot');
 const productSlides = [
   {
@@ -80,6 +81,26 @@ const productSlides = [
     mobile: 'assets/mobile-firewall.png',
     desktopAlt: 'Containarr desktop control center showing firewall policies',
     mobileAlt: 'Containarr iPhone app showing firewall policies'
+  },
+  {
+    desktop: 'assets/desktop-domain.png',
+    desktopAlt: 'Containarr desktop control center showing domain and certificate settings'
+  },
+  {
+    desktop: 'assets/desktop-backups.png',
+    desktopAlt: 'Containarr desktop control center showing Git backup settings'
+  },
+  {
+    desktop: 'assets/desktop-events.png',
+    desktopAlt: 'Containarr desktop control center showing events and notification settings'
+  },
+  {
+    desktop: 'assets/desktop-new-app.png',
+    desktopAlt: 'Containarr desktop control center showing the new app registry'
+  },
+  {
+    desktop: 'assets/desktop-shell.png',
+    desktopAlt: 'Containarr desktop control center showing an interactive container shell'
   }
 ];
 
@@ -88,9 +109,11 @@ let productSlideTimer;
 
 productSlides.slice(1).forEach((slide) => {
   const desktopImage = new Image();
-  const mobileImage = new Image();
   desktopImage.src = slide.desktop;
-  mobileImage.src = slide.mobile;
+  if (slide.mobile) {
+    const mobileImage = new Image();
+    mobileImage.src = slide.mobile;
+  }
 });
 
 function showProductSlide(index) {
@@ -105,9 +128,12 @@ function showProductSlide(index) {
 
   if (reduceMotion) {
     productDesktopImage.src = slide.desktop;
-    productMobileImage.src = slide.mobile;
     productDesktopImage.alt = slide.desktopAlt;
-    productMobileImage.alt = slide.mobileAlt;
+    productPhoneFrame.hidden = !slide.mobile;
+    if (slide.mobile) {
+      productMobileImage.src = slide.mobile;
+      productMobileImage.alt = slide.mobileAlt;
+    }
     return;
   }
 
@@ -116,9 +142,12 @@ function showProductSlide(index) {
 
   setTimeout(() => {
     productDesktopImage.src = slide.desktop;
-    productMobileImage.src = slide.mobile;
     productDesktopImage.alt = slide.desktopAlt;
-    productMobileImage.alt = slide.mobileAlt;
+    productPhoneFrame.hidden = !slide.mobile;
+    if (slide.mobile) {
+      productMobileImage.src = slide.mobile;
+      productMobileImage.alt = slide.mobileAlt;
+    }
     productDesktopImage.classList.remove('showcase-image-changing');
     productMobileImage.classList.remove('showcase-image-changing');
   }, 180);
