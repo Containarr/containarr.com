@@ -66,6 +66,11 @@ h1 span { color: #8b8b95; }
 @keyframes cursor-blink { 0%, 45% { opacity: 1; } 46%, 100% { opacity: 0; } }
 
 .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.store-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px 4px; margin: 0 0 64px; }
+.store-badges a { flex: 0 0 auto; }
+.store-badges img { width: auto; height: 48px; }
+/* Google's artwork includes clear space around the badge. */
+.store-badges .google-play-badge { height: 72px; }
 .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; border-radius: 10px; padding: 0 19px; font-size: 15px; font-weight: 560; transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease; }
 .button:hover { transform: translateY(-1px); }
 .button:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
@@ -97,6 +102,7 @@ h1 span { color: #8b8b95; }
 .pager-dot.active { border-color: #73b7ff; background: #73b7ff; box-shadow: 0 0 12px rgba(115,183,255,.5); transform: scale(1.18); }
 
 .section { padding: 150px 0; }
+#features { padding-top: 48px; }
 .section-muted { position: relative; border-top: 1px solid var(--border); background: #0c0c0f; }
 .section-heading { max-width: 720px; margin-bottom: 64px; }
 .kicker { margin-bottom: 14px; color: #61aefa; font-size: 13px; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; }
@@ -116,6 +122,8 @@ h1 span { color: #8b8b95; }
 .domain-stack img { width: 34px; height: 34px; object-fit: contain; border-radius: 8px; }
 .domain-stack b { display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; border: 1px solid #008f6a; border-radius: 999px; color: #34d399; font-family: var(--font-sans); font-size: 12px; font-weight: 550; }
 .domain-stack b::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #20d99a; }
+.domain-stack .domain-provisioning b { border-color: #a16207; color: #fbbf24; white-space: nowrap; }
+.domain-stack .domain-provisioning b::before { flex: 0 0 7px; background: #fbbf24; }
 .mini-status, .dns-record, .update-row { position: absolute; left: 30px; right: 30px; bottom: 30px; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 0 15px; border: 1px solid var(--border); border-radius: 11px; background: #151519; color: #a1a1aa; font-size: 13px; }
 .mini-status span, .update-row span { display: flex; align-items: center; gap: 8px; color: #e4e4e7; }
 .mini-status i, .update-row i { width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 9px #34d399; }
@@ -165,6 +173,10 @@ h1 span { color: #8b8b95; }
 .footer-inner { min-height: 92px; display: flex; align-items: center; gap: 28px; }
 .footer-inner > p { margin: 0; color: #696974; font-size: 14px; }
 .footer-links { display: flex; gap: 24px; margin-left: auto; color: #8b8b94; font-size: 14px; }
+
+@media (max-width: 1100px) {
+  .domain-stack .domain-provisioning b { grid-column: 1 / -1; justify-self: start; }
+}
 
 @media (max-width: 900px) {
   .hero { min-height: 900px; }
