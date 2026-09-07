@@ -5,7 +5,7 @@ const services = [
   { name: 'plex', color: '#e5a00d' },
   { name: 'sonarr', color: '#52a2c9' },
   { name: 'radarr', color: '#f2cf42' },
-  { name: 'homey', color: '#1da1f2' },
+  { name: 'homey', color: '#c4b5fd' },
   { name: 'jellyfin', color: '#aa5cc3' },
   { name: 'qbittorrent', color: '#4d9be8' },
   { name: 'wg-easy', color: '#e04b52' }
@@ -54,33 +54,23 @@ if (reduceMotion) {
 }
 
 const productDesktopImage = document.querySelector('#product-desktop-image');
-const productMobileImage = document.querySelector('#product-mobile-image');
-const productPhoneFrame = document.querySelector('.phone-frame');
 const pagerDots = document.querySelectorAll('.pager-dot');
 const productSlides = [
   {
     desktop: 'assets/desktop-apps.png',
-    mobile: 'assets/mobile-apps.png',
-    desktopAlt: 'Containarr desktop control center showing installed apps',
-    mobileAlt: 'Containarr iPhone app showing installed apps'
+    desktopAlt: 'Containarr desktop control center showing installed apps'
   },
   {
     desktop: 'assets/desktop-containers.png',
-    mobile: 'assets/mobile-containers.png',
-    desktopAlt: 'Containarr desktop control center showing running containers',
-    mobileAlt: 'Containarr iPhone app showing running containers'
+    desktopAlt: 'Containarr desktop control center showing running containers'
   },
   {
     desktop: 'assets/desktop-proxies.png',
-    mobile: 'assets/mobile-proxies.png',
-    desktopAlt: 'Containarr desktop control center showing configured proxies',
-    mobileAlt: 'Containarr iPhone app showing configured proxies'
+    desktopAlt: 'Containarr desktop control center showing configured proxies'
   },
   {
     desktop: 'assets/desktop-firewall.png',
-    mobile: 'assets/mobile-firewall.png',
-    desktopAlt: 'Containarr desktop control center showing firewall policies',
-    mobileAlt: 'Containarr iPhone app showing firewall policies'
+    desktopAlt: 'Containarr desktop control center showing firewall policies'
   },
   {
     desktop: 'assets/desktop-domain.png',
@@ -110,10 +100,6 @@ let productSlideTimer;
 productSlides.slice(1).forEach((slide) => {
   const desktopImage = new Image();
   desktopImage.src = slide.desktop;
-  if (slide.mobile) {
-    const mobileImage = new Image();
-    mobileImage.src = slide.mobile;
-  }
 });
 
 function showProductSlide(index) {
@@ -129,27 +115,15 @@ function showProductSlide(index) {
   if (reduceMotion) {
     productDesktopImage.src = slide.desktop;
     productDesktopImage.alt = slide.desktopAlt;
-    productPhoneFrame.hidden = !slide.mobile;
-    if (slide.mobile) {
-      productMobileImage.src = slide.mobile;
-      productMobileImage.alt = slide.mobileAlt;
-    }
     return;
   }
 
   productDesktopImage.classList.add('showcase-image-changing');
-  productMobileImage.classList.add('showcase-image-changing');
 
   setTimeout(() => {
     productDesktopImage.src = slide.desktop;
     productDesktopImage.alt = slide.desktopAlt;
-    productPhoneFrame.hidden = !slide.mobile;
-    if (slide.mobile) {
-      productMobileImage.src = slide.mobile;
-      productMobileImage.alt = slide.mobileAlt;
-    }
     productDesktopImage.classList.remove('showcase-image-changing');
-    productMobileImage.classList.remove('showcase-image-changing');
   }, 180);
 }
 
@@ -163,6 +137,13 @@ pagerDots.forEach((dot, index) => {
         showProductSlide((productSlideIndex + 1) % productSlides.length);
       }, 6000);
     }
+  });
+});
+
+document.querySelectorAll('.showcase-nav').forEach((button) => {
+  button.addEventListener('click', () => {
+    const index = (productSlideIndex + Number(button.dataset.direction) + productSlides.length) % productSlides.length;
+    pagerDots[index].click();
   });
 });
 
